@@ -5,7 +5,11 @@
 angular.module('multi-screen-demo.controllers', [
 ]).
 // sample controller for the home page
-controller('HomeCtrl', function($scope, User) {
+controller('HomeCtrl', function($scope, socket, User) {
+  socket.on('send:time', function(data) {
+    $scope.time = data.time;
+  });
+
   $scope.user = User.query();
 }).
 
