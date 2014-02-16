@@ -8,7 +8,7 @@ angular.module('multi-screen-demo.controllers.index', [
 controller('HeadCtrl', function($scope, socket) {
   $scope.deviceType = window.deviceType;
 
-  socket.on('server:init', function() {
-    socket.emit('client:device', { deviceType: window.deviceType });
+  socket.on('pair:init', function() {
+    socket.emit('pair:deviceType', { deviceType: window.deviceType });
   });
 });

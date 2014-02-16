@@ -21,6 +21,9 @@ config(function ($routeProvider, $locationProvider) {
     when('/', {
       templateUrl: '/partials/' + window.deviceType + '/code'
     }).
+    when('/main', {
+      templateUrl: '/partials/' + window.deviceType + '/main'
+    }).
     otherwise({
       redirectTo: '/'
     });
