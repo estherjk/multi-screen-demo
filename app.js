@@ -31,7 +31,7 @@ if ('development' == app.get('env')) {
 
 // serve index and view partials
 app.get('/', routes.index);
-app.get('/partials/:view', routes.partials);
+app.get('/partials/:deviceType/:view', routes.partials);
 
 // REST API
 app.get('/api/user', api.getUser);

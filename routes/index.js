@@ -7,6 +7,7 @@ exports.index = function(req, res) {
 };
 
 exports.partials = function (req, res) {
+  var deviceType = req.params.deviceType;
   var view = req.params.view;
-  res.render('partials/' + view);
+  res.render('partials/' + deviceType + '/' + view);
 };
