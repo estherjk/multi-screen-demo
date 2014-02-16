@@ -1,3 +1,3 @@
 # multi-screen-demo
 
-Multi-screen WebSocket demo
+A multi-screen demo using socket.io (WebSockets)
