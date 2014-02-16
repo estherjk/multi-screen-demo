@@ -6,7 +6,9 @@ angular.module('multi-screen-demo', [
   'btford.socket-io',
   'ngRoute',
 
-  'multi-screen-demo.controllers',
+  'multi-screen-demo.controllers.index',
+  'multi-screen-demo.controllers.mobile',
+  'multi-screen-demo.controllers.pc',
   'multi-screen-demo.directives',
   'multi-screen-demo.filters',
   'multi-screen-demo.services'
@@ -17,10 +19,10 @@ factory('socket', function(socketFactory) {
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/', {
-      templateUrl: '/partials/home'
+      templateUrl: '/partials/' + window.deviceType + '/code'
     }).
-    when('/about', {
-      templateUrl: '/partials/about'
+    when('/main', {
+      templateUrl: '/partials/' + window.deviceType + '/main'
     }).
     otherwise({
       redirectTo: '/'

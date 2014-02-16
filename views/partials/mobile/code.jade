@@ -1,0 +1,9 @@
+div(ng-controller='MobileCodeCtrl')
+  div.jumbotron
+    h1 Multi-screen demo
+    form
+      input.form-control.input-lg(type='text', placeholder='Code', ng-model='code')
+      button.btn.btn-primary.btn-lg#btn-code-submit(ng-click='submitCode()') Submit
+
+  div.alert.alert-danger(ng-show='isCodeInvalid')
+    strong Invalid code! Reload the page and try again.
