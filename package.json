@@ -1,11 +1,12 @@
 {
   "name": "multi-screen-demo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
+    "crypto": "0.0.3",
     "express": "3.4.8",
     "jade": "1.1.5",
     "mongoose": "3.8.7",

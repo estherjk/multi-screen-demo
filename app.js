@@ -1,15 +1,16 @@
-/**
- * Module dependencies.
- */
-
+// module dependencies
 var express = require('express')
   , http = require('http')
   , path = require('path')
+  , socketio = require('socket.io')
 
   , routes = require('./routes')
   , api = require('./routes/api');
 
+// app variables
 var app = express();
+var server = http.createServer(app);
+var io = socketio.listen(server);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -30,7 +31,7 @@ if ('development' == app.get('env')) {
 
 // serve index and view partials
 app.get('/', routes.index);
-app.get('/partials/:view', routes.partials);
+app.get('/partials/:deviceType/:view', routes.partials);
 
 // REST API
 app.get('/api/user', api.getUser);
@@ -38,6 +39,10 @@ app.get('/api/user', api.getUser);
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
 
-http.createServer(app).listen(app.get('port'), function(){
+// Socket.io communication
+io.sockets.on('connection', require('./routes/socket'));
+
+// HTTP server
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

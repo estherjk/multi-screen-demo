@@ -2,3 +2,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+#btn-code-submit {
+  margin-top: 10px;
+}

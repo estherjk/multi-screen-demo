@@ -3,20 +3,26 @@
 // Declare app level module which depends on filters, and services
 
 angular.module('multi-screen-demo', [
-  'multi-screen-demo.controllers',
+  'btford.socket-io',
+  'ngRoute',
+
+  'multi-screen-demo.controllers.index',
+  'multi-screen-demo.controllers.mobile',
+  'multi-screen-demo.controllers.pc',
   'multi-screen-demo.directives',
   'multi-screen-demo.filters',
-  'multi-screen-demo.services',
-
-  'ngRoute'
+  'multi-screen-demo.services'
 ]).
+factory('socket', function(socketFactory) {
+  return socketFactory();
+}).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/', {
-      templateUrl: '/partials/home'
+      templateUrl: '/partials/' + window.deviceType + '/code'
     }).
-    when('/about', {
-      templateUrl: '/partials/about'
+    when('/main', {
+      templateUrl: '/partials/' + window.deviceType + '/main'
     }).
     otherwise({
       redirectTo: '/'
