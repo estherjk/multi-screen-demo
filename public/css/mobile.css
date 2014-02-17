@@ -6,3 +6,36 @@ body {
 #btn-code-submit {
   margin-top: 10px;
 }
+
+.demo-list-container {
+  width: 90%;
+}
+
+.demo-list {
+  margin: 40px auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  list-style: none;
+}
+
+.demo-list li {
+  float: left;
+  width: 100px;
+  margin: 0 5px 0;
+  padding: 10px 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.demo-list li a {
+  display: block;
+  color: #428bca;
+}
+
+.demo-list li a:hover {
+  color: #428bca;
+  text-decoration: none;
+}
