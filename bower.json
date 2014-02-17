@@ -1,6 +1,6 @@
 {
   "name": "multi-screen-demo",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "angular": "1.2.13",
