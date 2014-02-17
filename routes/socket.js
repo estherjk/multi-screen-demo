@@ -53,6 +53,13 @@ module.exports = function(socket) {
     }
   });
 
+  // main page
+  socket.on('main:init', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('main:connected', {});
+    }
+  });
+
   // keypad demo
   socket.on('keypad:init', function() {
     if(socket.code && socket.code in socketCodes) {

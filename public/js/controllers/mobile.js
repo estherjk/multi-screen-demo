@@ -20,6 +20,14 @@ controller('MobileCodeCtrl', function($scope, $location, socket) {
   });
 }).
 
+// controller for mobile navbar
+controller('MobileNavbarCtrl', function($scope, $location, socket) {
+  $scope.selectMain = function() {
+    socket.emit('main:init', {});
+    $location.path('/main');
+  };
+}).
+
 // controller for mobile demo list
 controller('MobileDemoListCtrl', function($scope, $location, socket) {
   $scope.selectKeypad = function() {

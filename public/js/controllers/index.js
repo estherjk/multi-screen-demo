@@ -11,4 +11,11 @@ controller('HeadCtrl', function($scope, socket) {
   socket.on('pair:init', function() {
     socket.emit('pair:deviceType', { deviceType: window.deviceType });
   });
+}).
+
+// global controller
+controller('GlobalCtrl', function($scope, $location, socket) {
+  socket.on('main:connected', function() {
+    $location.path('/main');
+  });
 });
