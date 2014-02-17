@@ -18,4 +18,17 @@ controller('MobileCodeCtrl', function($scope, $location, socket) {
   socket.on('pair:fail', function() {
     $scope.isCodeInvalid = true;
   });
+}).
+
+// controller for mobile demo list
+controller('MobileDemoListCtrl', function($scope, $location, socket) {
+  $scope.selectKeypad = function() {
+    socket.emit('keypad:init', {});
+    $location.path('/keypad');
+  };
+
+  $scope.selectTrackpad = function() {
+    socket.emit('trackpad:init', {});
+    $location.path('/trackpad');
+  };
 });

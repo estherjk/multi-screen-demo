@@ -52,4 +52,18 @@ module.exports = function(socket) {
       });
     }
   });
+
+  // keypad demo
+  socket.on('keypad:init', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('keypad:connected', {});
+    }
+  });
+
+  // trackpad demo
+  socket.on('trackpad:init', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('trackpad:connected', {});
+    }
+  });
 };
