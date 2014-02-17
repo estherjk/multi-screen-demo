@@ -1,2 +1,6 @@
-div
-  p Mobile connected
+div.demo-list-container
+  ul.demo-list(ng-controller='MobileDemoListCtrl')
+    li 
+      a(ng-click='selectKeypad()') Keypad
+    li
+      a(ng-click='selectTrackpad()') Trackpad

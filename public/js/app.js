@@ -24,6 +24,12 @@ config(function ($routeProvider, $locationProvider) {
     when('/main', {
       templateUrl: '/partials/' + window.deviceType + '/main'
     }).
+    when('/keypad', {
+      templateUrl: '/partials/' + window.deviceType + '/keypad'
+    }).
+    when('/trackpad', {
+      templateUrl: '/partials/' + window.deviceType + '/trackpad'
+    }).
     otherwise({
       redirectTo: '/'
     });

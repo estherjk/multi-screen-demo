@@ -7,3 +7,8 @@ body {
   color: #5bc0de;
   font-weight: bold;
 }
+
+.span-success {
+  color: #5cb85c;
+  font-weight: bold;
+}

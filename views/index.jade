@@ -7,7 +7,7 @@ html(ng-app='multi-screen-demo')
     link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet', ng-href='/css/{{deviceType}}.css')
 
-  body
+  body(ng-controller='GlobalCtrl')
     div.container(ng-view)
 
     script(src='/socket.io/socket.io.js')
