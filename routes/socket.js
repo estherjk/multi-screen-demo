@@ -47,7 +47,7 @@ module.exports = function(socket) {
         }
         else {
           socket.emit('pair:fail', {});
-          socket.disconnect();
+          //socket.disconnect();
         }
       });
     }
