@@ -73,4 +73,12 @@ module.exports = function(socket) {
       socketCodes[socket.code].emit('trackpad:connected', {});
     }
   });
+
+  // clean up on disconnect
+  socket.on('disconnect', function() {
+    // remove code / socket assocation
+    if(socket.code && socket.code in socketCodes) {
+      delete socketCodes[socket.code];
+    }
+  });
 };
