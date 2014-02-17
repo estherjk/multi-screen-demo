@@ -1,10 +1,10 @@
 'use strict';
 
-/* Admin controllers */
+/* PC controllers */
 
 angular.module('multi-screen-demo.controllers.pc', [
 ]).
-// controller for PC Code
+// controller for PC code
 controller('PcCodeCtrl', function($scope, $location, socket) {
   socket.on('pair:sendCode', function(data) {
     $scope.code = data.code;

@@ -1,10 +1,10 @@
 'use strict';
 
-/* Admin controllers */
+/* Mobile controllers */
 
 angular.module('multi-screen-demo.controllers.mobile', [
 ]).
-// controller for Mobile Code
+// controller for mobile code
 controller('MobileCodeCtrl', function($scope, $location, socket) {
   $scope.submitCode = function() {
     socket.emit('pair:getCode', { code: $scope.code });
