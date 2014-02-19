@@ -30,9 +30,9 @@ controller('MobileNavbarCtrl', function($scope, $location, socket) {
 
 // controller for mobile demo list
 controller('MobileDemoListCtrl', function($scope, $location, socket) {
-  $scope.selectKeypad = function() {
-    socket.emit('keypad:init', {});
-    $location.path('/keypad');
+  $scope.selectdpad = function() {
+    socket.emit('dpad:init', {});
+    $location.path('/dpad');
   };
 
   $scope.selectTrackpad = function() {

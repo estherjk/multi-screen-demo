@@ -17,8 +17,8 @@ controller('PcCodeCtrl', function($scope, $location, socket) {
 
 // controller for main PC page
 controller('PcMainCtrl', function($scope, $location, socket) {
-  socket.on('keypad:connected', function() {
-    $location.path('/keypad');
+  socket.on('dpad:connected', function() {
+    $location.path('/dpad');
   });
 
   socket.on('trackpad:connected', function() {

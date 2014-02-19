@@ -60,10 +60,10 @@ module.exports = function(socket) {
     }
   });
 
-  // keypad demo
-  socket.on('keypad:init', function() {
+  // dpad demo
+  socket.on('dpad:init', function() {
     if(socket.code && socket.code in socketCodes) {
-      socketCodes[socket.code].emit('keypad:connected', {});
+      socketCodes[socket.code].emit('dpad:connected', {});
     }
   });
 
