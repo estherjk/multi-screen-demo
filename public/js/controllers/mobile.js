@@ -3,6 +3,7 @@
 /* Mobile controllers */
 
 angular.module('multi-screen-demo.controllers.mobile', [
+  'ngTouch'
 ]).
 // controller for mobile code
 controller('MobileCodeCtrl', function($scope, $location, socket) {
@@ -30,13 +31,28 @@ controller('MobileNavbarCtrl', function($scope, $location, socket) {
 
 // controller for mobile demo list
 controller('MobileDemoListCtrl', function($scope, $location, socket) {
-  $scope.selectdpad = function() {
+  $scope.selectDpad = function() {
     socket.emit('dpad:init', {});
     $location.path('/dpad');
   };
-
   $scope.selectTrackpad = function() {
     socket.emit('trackpad:init', {});
     $location.path('/trackpad');
+  };
+}).
+
+// controller for mobile D-pad demo
+controller('MobileDpadCtrl', function($scope, socket) {
+  $scope.selectUp = function() {
+    socket.emit('dpad:selectUp', {});
+  };
+  $scope.selectLeft = function() {
+    socket.emit('dpad:selectLeft', {});
+  };
+  $scope.selectRight = function() {
+    socket.emit('dpad:selectRight', {});
+  };
+  $scope.selectDown = function() {
+    socket.emit('dpad:selectDown', {});
   };
 });

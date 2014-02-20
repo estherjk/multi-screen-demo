@@ -1,4 +1,7 @@
 include navbar
 
-div
-  h1 D-pad: Mobile stuff here
+div.dpad-container(ng-controller='MobileDpadCtrl')
+  button.btn.btn-default.btn-lg.btn-dpad#btn-up(type='button', ng-click='selectUp()') &#x2191;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-left(type='button', ng-click='selectLeft()') &#x2190;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-right(type='button', ng-click='selectRight()') &#x2192;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-down(type='button', ng-click='selectDown()') &#x2193;

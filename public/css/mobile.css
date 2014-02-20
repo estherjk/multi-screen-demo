@@ -23,3 +23,42 @@ body {
   float: left;
   margin: 0 10px 0;
 }
+
+.dpad-container {
+  position: relative;
+  margin: 20px auto 0;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-dpad {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-weight: 900;
+}
+
+#btn-up {
+  top: 10px;
+  left: 70px;
+}
+
+#btn-left {
+  top: 70px;
+  left: 10px;
+}
+
+#btn-right {
+  top: 70px;
+  right: 10px;
+}
+
+#btn-down {
+  bottom: 10px;
+  left: 70px;
+}
