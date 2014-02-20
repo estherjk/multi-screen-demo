@@ -66,6 +66,26 @@ module.exports = function(socket) {
       socketCodes[socket.code].emit('dpad:connected', {});
     }
   });
+  socket.on('dpad:selectUp', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveUp', {});
+    }
+  });
+  socket.on('dpad:selectLeft', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveLeft', {});
+    }
+  });
+  socket.on('dpad:selectRight', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveRight', {});
+    }
+  });
+  socket.on('dpad:selectDown', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveDown', {});
+    }
+  });
 
   // trackpad demo
   socket.on('trackpad:init', function() {
