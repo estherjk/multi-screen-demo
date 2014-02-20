@@ -31,7 +31,7 @@ controller('MobileNavbarCtrl', function($scope, $location, socket) {
 
 // controller for mobile demo list
 controller('MobileDemoListCtrl', function($scope, $location, socket) {
-  $scope.selectdpad = function() {
+  $scope.selectDpad = function() {
     socket.emit('dpad:init', {});
     $location.path('/dpad');
   };
