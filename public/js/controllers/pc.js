@@ -26,16 +26,51 @@ controller('PcMainCtrl', function($scope, $location, socket) {
 
 // controller for PC D-pad demo
 controller('PcDpadCtrl', function($scope, socket) {
+  // dimensions of dpad-container
+  var width = $('#dpad-container').outerWidth();
+  var height = $('#dpad-container').outerHeight();
+
+  // initial position of dpad-target
+  var x = $('#dpad-target').position().left;
+  var y = $('#dpad-target').position().top;
+
+  // size of dpad-target (assuming it is square)
+  var targetSize = $('#dpad-target').width();
+
   socket.on('dpad:moveUp', function() {
-    console.log('dpad:moveUp');
+    y = y - 10;
+    if(y >= 0) {
+      $("#dpad-target").css({ left: x, top: y });
+    }
+    else {
+      y = 0;
+    }
   });
   socket.on('dpad:moveLeft', function() {
-    console.log('dpad:moveLeft');
+    x = x - 10;
+    if(x >= 0) {
+      $("#dpad-target").css({ left: x, top: y });
+    }
+    else {
+      x = 0;
+    }
   });
   socket.on('dpad:moveRight', function() {
-    console.log('dpad:moveRight');
+    x = x + 10;
+    if(x <= (width-targetSize)) {
+      $("#dpad-target").css({ left: x, top: y });
+    }
+    else {
+      x = width - targetSize;
+    }
   });
   socket.on('dpad:moveDown', function() {
-    console.log('dpad:moveDown');
+    y = y + 10;
+    if(y <= (height-targetSize)) {
+      $("#dpad-target").css({ left: x, top: y });
+    }
+    else {
+      y = height - targetSize;
+    }
   });
 });

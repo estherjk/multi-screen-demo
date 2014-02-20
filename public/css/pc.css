@@ -13,7 +13,7 @@ body {
   font-weight: bold;
 }
 
-.dpad-container {
+#dpad-container {
   position: relative;
   margin: 40px auto 0;
   width: 600px;
