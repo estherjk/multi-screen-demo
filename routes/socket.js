@@ -60,10 +60,30 @@ module.exports = function(socket) {
     }
   });
 
-  // keypad demo
-  socket.on('keypad:init', function() {
+  // dpad demo
+  socket.on('dpad:init', function() {
     if(socket.code && socket.code in socketCodes) {
-      socketCodes[socket.code].emit('keypad:connected', {});
+      socketCodes[socket.code].emit('dpad:connected', {});
+    }
+  });
+  socket.on('dpad:selectUp', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveUp', {});
+    }
+  });
+  socket.on('dpad:selectLeft', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveLeft', {});
+    }
+  });
+  socket.on('dpad:selectRight', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveRight', {});
+    }
+  });
+  socket.on('dpad:selectDown', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('dpad:moveDown', {});
     }
   });
 

@@ -21,21 +21,44 @@ body {
 
 .demo-list li {
   float: left;
-  width: 100px;
-  margin: 0 5px 0;
-  padding: 10px 5px 10px;
+  margin: 0 10px 0;
+}
+
+.dpad-container {
+  position: relative;
+  margin: 20px auto 0;
+  width: 200px;
+  height: 200px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 18px;
-  text-align: center;
 }
 
-.demo-list li a {
-  display: block;
-  color: #428bca;
+.btn-dpad {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-weight: 900;
 }
 
-.demo-list li a:hover {
-  color: #428bca;
-  text-decoration: none;
+#btn-up {
+  top: 10px;
+  left: 70px;
+}
+
+#btn-left {
+  top: 70px;
+  left: 10px;
+}
+
+#btn-right {
+  top: 70px;
+  right: 10px;
+}
+
+#btn-down {
+  bottom: 10px;
+  left: 70px;
 }
