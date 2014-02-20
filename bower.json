@@ -6,6 +6,7 @@
     "angular": "1.2.13",
     "angular-resource": "1.2.13",
     "angular-route": "1.2.13",
+    "angular-touch": "1.2.13",
     "angular-socket-io": "0.3.0",
     "bootstrap": "3.1.1",
     "font-awesome": "4.0.3",
