@@ -1,7 +1,7 @@
 include navbar
 
 div.dpad-container(ng-controller='MobileDpadCtrl')
-  button.btn.btn-default.btn-lg.btn-dpad#btn-up(type='button', ng-click='selectUp()') &#x2191;
-  button.btn.btn-default.btn-lg.btn-dpad#btn-left(type='button', ng-click='selectLeft()') &#x2190;
-  button.btn.btn-default.btn-lg.btn-dpad#btn-right(type='button', ng-click='selectRight()') &#x2192;
-  button.btn.btn-default.btn-lg.btn-dpad#btn-down(type='button', ng-click='selectDown()') &#x2193;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-up(type='button', hm-tap='selectUp()') &#x2191;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-left(type='button', hm-tap='selectLeft()') &#x2190;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-right(type='button', hm-tap='selectRight()') &#x2192;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-down(type='button', hm-tap='selectDown()') &#x2193;

@@ -3,7 +3,7 @@
 /* Mobile controllers */
 
 angular.module('multi-screen-demo.controllers.mobile', [
-  'ngTouch'
+  'hmTouchEvents'
 ]).
 // controller for mobile code
 controller('MobileCodeCtrl', function($scope, $location, socket) {
