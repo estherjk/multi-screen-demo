@@ -19,9 +19,9 @@ body {
   list-style: none;
 }
 
-.demo-list li {
-  float: left;
-  margin: 0 10px 0;
+.demo-list li a {
+  margin-bottom: 10px;
+  width: 120px;
 }
 
 .dpad-container {
