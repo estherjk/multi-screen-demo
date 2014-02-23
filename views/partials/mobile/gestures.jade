@@ -2,6 +2,7 @@ include navbar
 
 div.gestures-container(
   ng-controller='MobileGesturesCtrl',
+  hm-hold='detectGesture("Hold")',
   hm-tap='detectGesture("Tap")',
   hm-doubletap='detectGesture("Double tap")',
   hm-dragup='detectGesture("Drag up")',
