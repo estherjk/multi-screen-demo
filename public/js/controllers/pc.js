@@ -33,17 +33,6 @@ controller('PcGesturesCtrl', function($scope, socket) {
 
 // controller for PC D-pad demo
 controller('PcDpadCtrl', function($scope, socket) {
-  // dimensions of dpad-container
-  var width = $('#dpad-container').outerWidth();
-  var height = $('#dpad-container').outerHeight();
-
-  // initial position of dpad-target
-  var x = $('#dpad-target').position().left;
-  var y = $('#dpad-target').position().top;
-
-  // size of dpad-target (assuming it is square)
-  var targetSize = $('#dpad-target').width();
-
   // NB: Using jquery is not very angular...
   socket.on('dpad:move', function(data) {
     switch(data.direction) {
