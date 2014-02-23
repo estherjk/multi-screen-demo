@@ -50,16 +50,10 @@ controller('MobileGesturesCtrl', function($scope, socket) {
 
 // controller for mobile D-pad demo
 controller('MobileDpadCtrl', function($scope, socket) {
-  $scope.selectUp = function() {
-    socket.emit('dpad:selectUp', {});
-  };
-  $scope.selectLeft = function() {
-    socket.emit('dpad:selectLeft', {});
-  };
-  $scope.selectRight = function() {
-    socket.emit('dpad:selectRight', {});
-  };
-  $scope.selectDown = function() {
-    socket.emit('dpad:selectDown', {});
+  $scope.select = function(directionStr, isSelected) {
+    socket.emit('dpad:select', { 
+      direction: directionStr,
+      isSelected: isSelected
+    });
   };
 });
