@@ -27,6 +27,13 @@ controller('PcMainCtrl', function($scope, $location, socket) {
   });
 }).
 
+// controller for PC gestures demo
+controller('PcGesturesCtrl', function($scope, socket) {
+  socket.on('gestures:notify', function(data) {
+    $scope.gestureStr = data.gesture;
+  });
+}).
+
 // controller for PC D-pad demo
 controller('PcDpadCtrl', function($scope, socket) {
   // dimensions of dpad-container

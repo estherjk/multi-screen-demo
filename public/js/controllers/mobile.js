@@ -45,6 +45,13 @@ controller('MobileDemoListCtrl', function($scope, $location, socket) {
   };
 }).
 
+// controller for mobile gestures demo
+controller('MobileGesturesCtrl', function($scope, socket) {
+  $scope.detectGesture = function(gestureStr) {
+    socket.emit('gestures:detected', { gesture: gestureStr });
+  };
+}).
+
 // controller for mobile D-pad demo
 controller('MobileDpadCtrl', function($scope, socket) {
   $scope.selectUp = function() {
