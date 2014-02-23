@@ -1,7 +1,23 @@
 include navbar
 
 div.dpad-container(ng-controller='MobileDpadCtrl')
-  button.btn.btn-default.btn-lg.btn-dpad#btn-up(type='button', hm-tap='selectUp()') &#x2191;
-  button.btn.btn-default.btn-lg.btn-dpad#btn-left(type='button', hm-tap='selectLeft()') &#x2190;
-  button.btn.btn-default.btn-lg.btn-dpad#btn-right(type='button', hm-tap='selectRight()') &#x2192;
-  button.btn.btn-default.btn-lg.btn-dpad#btn-down(type='button', hm-tap='selectDown()') &#x2193;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-up(
+    type='button', 
+    hm-touch='select("up", true)',
+    hm-release='select("up", false)'
+  ) &#x2191;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-left(
+    type='button',
+    hm-touch='select("left", true)',
+    hm-release='select("left", false)'
+  ) &#x2190;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-right(
+    type='button',
+    hm-touch='select("right", true)',
+    hm-release='select("right", false)'
+  ) &#x2192;
+  button.btn.btn-default.btn-lg.btn-dpad#btn-down(
+    type='button',
+    hm-touch='select("down", true)',
+    hm-release='select("down", false)'
+  ) &#x2193;
