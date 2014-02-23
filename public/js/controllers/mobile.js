@@ -31,6 +31,10 @@ controller('MobileNavbarCtrl', function($scope, $location, socket) {
 
 // controller for mobile demo list
 controller('MobileDemoListCtrl', function($scope, $location, socket) {
+  $scope.selectGestures = function() {
+    socket.emit('gestures:init', {});
+    $location.path('/gestures');
+  };
   $scope.selectDpad = function() {
     socket.emit('dpad:init', {});
     $location.path('/dpad');
@@ -38,6 +42,13 @@ controller('MobileDemoListCtrl', function($scope, $location, socket) {
   $scope.selectTrackpad = function() {
     socket.emit('trackpad:init', {});
     $location.path('/trackpad');
+  };
+}).
+
+// controller for mobile gestures demo
+controller('MobileGesturesCtrl', function($scope, socket) {
+  $scope.detectGesture = function(gestureStr) {
+    socket.emit('gestures:detected', { gesture: gestureStr });
   };
 }).
 

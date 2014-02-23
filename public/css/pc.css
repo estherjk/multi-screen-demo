@@ -13,13 +13,28 @@ body {
   font-weight: bold;
 }
 
-#dpad-container {
+.demo-container {
   position: relative;
   margin: 40px auto 0;
   width: 600px;
-  height: 400px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+#gestures-container {
+  display: table;
+  height: 100px;
+}
+
+#gestures-container p {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 44px;
+  text-align: center;
+}
+
+#dpad-container {
+  height: 400px;
 }
 
 #dpad-target {
