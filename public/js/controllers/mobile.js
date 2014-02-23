@@ -3,7 +3,7 @@
 /* Mobile controllers */
 
 angular.module('multi-screen-demo.controllers.mobile', [
-  'ngTouch'
+  'hmTouchEvents'
 ]).
 // controller for mobile code
 controller('MobileCodeCtrl', function($scope, $location, socket) {
@@ -31,13 +31,20 @@ controller('MobileNavbarCtrl', function($scope, $location, socket) {
 
 // controller for mobile demo list
 controller('MobileDemoListCtrl', function($scope, $location, socket) {
+  $scope.selectGestures = function() {
+    socket.emit('gestures:init', {});
+    $location.path('/gestures');
+  };
   $scope.selectDpad = function() {
     socket.emit('dpad:init', {});
     $location.path('/dpad');
   };
-  $scope.selectTrackpad = function() {
-    socket.emit('trackpad:init', {});
-    $location.path('/trackpad');
+}).
+
+// controller for mobile gestures demo
+controller('MobileGesturesCtrl', function($scope, socket) {
+  $scope.detectGesture = function(gestureStr) {
+    socket.emit('gestures:detected', { gesture: gestureStr });
   };
 }).
 

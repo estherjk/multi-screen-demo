@@ -1,0 +1,14 @@
+include navbar
+
+div.gestures-container(
+  ng-controller='MobileGesturesCtrl',
+  hm-hold='detectGesture("Hold")',
+  hm-tap='detectGesture("Tap")',
+  hm-doubletap='detectGesture("Double tap")',
+  hm-dragup='detectGesture("Drag up")',
+  hm-dragdown='detectGesture("Drag down")',
+  hm-dragleft='detectGesture("Drag left")',
+  hm-dragright='detectGesture("Drag right")',
+  hm-options='{ tap_always: false }'
+)
+  p Try me

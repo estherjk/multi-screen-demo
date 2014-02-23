@@ -60,6 +60,18 @@ module.exports = function(socket) {
     }
   });
 
+  // gestures demo
+  socket.on('gestures:init', function() {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('gestures:connected', {});
+    }
+  });
+  socket.on('gestures:detected', function(data) {
+    if(socket.code && socket.code in socketCodes) {
+      socketCodes[socket.code].emit('gestures:notify', { gesture: data.gesture });
+    }
+  });
+
   // dpad demo
   socket.on('dpad:init', function() {
     if(socket.code && socket.code in socketCodes) {
@@ -84,13 +96,6 @@ module.exports = function(socket) {
   socket.on('dpad:selectDown', function() {
     if(socket.code && socket.code in socketCodes) {
       socketCodes[socket.code].emit('dpad:moveDown', {});
-    }
-  });
-
-  // trackpad demo
-  socket.on('trackpad:init', function() {
-    if(socket.code && socket.code in socketCodes) {
-      socketCodes[socket.code].emit('trackpad:connected', {});
     }
   });
 
