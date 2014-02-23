@@ -44,40 +44,41 @@ controller('PcDpadCtrl', function($scope, socket) {
   // size of dpad-target (assuming it is square)
   var targetSize = $('#dpad-target').width();
 
-  socket.on('dpad:moveUp', function() {
-    y = y - 10;
-    if(y >= 0) {
-      $("#dpad-target").css({ left: x, top: y });
-    }
-    else {
-      y = 0;
-    }
-  });
-  socket.on('dpad:moveLeft', function() {
-    x = x - 10;
-    if(x >= 0) {
-      $("#dpad-target").css({ left: x, top: y });
-    }
-    else {
-      x = 0;
-    }
-  });
-  socket.on('dpad:moveRight', function() {
-    x = x + 10;
-    if(x <= (width-targetSize)) {
-      $("#dpad-target").css({ left: x, top: y });
-    }
-    else {
-      x = width - targetSize;
-    }
-  });
-  socket.on('dpad:moveDown', function() {
-    y = y + 10;
-    if(y <= (height-targetSize)) {
-      $("#dpad-target").css({ left: x, top: y });
-    }
-    else {
-      y = height - targetSize;
+  // NB: Using jquery is not very angular...
+  socket.on('dpad:move', function(data) {
+    switch(data.direction) {
+      case 'up':
+        if(data.isSelected) {
+          $("#dpad-target").animate({ top: "-=180" }, 5000);  
+        }
+        else {
+          $("#dpad-target").stop();
+        }
+        break;
+      case 'down':
+        if(data.isSelected) {
+          $("#dpad-target").animate({ top: "+=180" }, 5000);  
+        }
+        else {
+          $("#dpad-target").stop();
+        }
+        break;
+      case 'left':
+        if(data.isSelected) {
+          $("#dpad-target").animate({ left: "-=180" }, 5000);  
+        }
+        else {
+          $("#dpad-target").stop();
+        }
+        break;
+      case 'right':
+        if(data.isSelected) {
+          $("#dpad-target").animate({ left: "+=180" }, 5000);  
+        }
+        else {
+          $("#dpad-target").stop();
+        }
+        break;
     }
   });
 });
