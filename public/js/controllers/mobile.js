@@ -39,10 +39,6 @@ controller('MobileDemoListCtrl', function($scope, $location, socket) {
     socket.emit('dpad:init', {});
     $location.path('/dpad');
   };
-  $scope.selectTrackpad = function() {
-    socket.emit('trackpad:init', {});
-    $location.path('/trackpad');
-  };
 }).
 
 // controller for mobile gestures demo

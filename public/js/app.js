@@ -30,9 +30,6 @@ config(function ($routeProvider, $locationProvider) {
     when('/dpad', {
       templateUrl: '/partials/' + window.deviceType + '/dpad'
     }).
-    when('/trackpad', {
-      templateUrl: '/partials/' + window.deviceType + '/trackpad'
-    }).
     otherwise({
       redirectTo: '/'
     });

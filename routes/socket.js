@@ -99,13 +99,6 @@ module.exports = function(socket) {
     }
   });
 
-  // trackpad demo
-  socket.on('trackpad:init', function() {
-    if(socket.code && socket.code in socketCodes) {
-      socketCodes[socket.code].emit('trackpad:connected', {});
-    }
-  });
-
   // clean up on disconnect
   socket.on('disconnect', function() {
     // remove code / socket assocation

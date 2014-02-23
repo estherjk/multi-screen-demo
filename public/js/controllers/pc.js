@@ -22,9 +22,6 @@ controller('PcMainCtrl', function($scope, $location, socket) {
   socket.on('dpad:connected', function() {
     $location.path('/dpad');
   });
-  socket.on('trackpad:connected', function() {
-    $location.path('/trackpad');
-  });
 }).
 
 // controller for PC gestures demo
