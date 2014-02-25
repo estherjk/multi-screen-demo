@@ -28,8 +28,8 @@ body {
   position: relative;
   display: table;
   margin: 20px auto 0;
-  width: 300px;
-  height: 400px;
+  width: 90%;
+  height: 350px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -40,6 +40,11 @@ body {
   font-size: 24px;
   color: #777;
   text-align: center;
+}
+
+.gestures-caption-container {
+  margin: 10px auto 0;
+  width: 90%;
 }
 
 .dpad-container {
