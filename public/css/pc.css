@@ -9,16 +9,15 @@ body {
 }
 
 .demo-container {
-  position: relative;
-  margin-top: 40px;
-  width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 #gestures-container {
   display: table;
-  min-height: 100px;
+  margin-top: 40px;
+  width: 100%;
+  height: 100px;
 }
 
 #gestures-container p {
@@ -29,6 +28,8 @@ body {
 }
 
 #dpad-container {
+  position: relative;
+  margin: 40px auto 0;
   width: 400px;
   height: 400px;
 }
