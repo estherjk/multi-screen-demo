@@ -35,12 +35,17 @@ controller('PcGesturesCtrl', function($scope, socket) {
 
 // controller for PC D-pad demo
 controller('PcDpadCtrl', function($scope, socket) {
-  // NB: Using jquery is not very angular...
+  var duration = 20000; // target will stop moving after 20 s...
+
+  // A couple things...
+  // 1. Using jquery is not very angular...
+  // 2. Also, probably shouldn't use animate() to move target, 
+  //    but it was the quickest way to illustrate...
   socket.on('dpad:move', function(data) {
     switch(data.direction) {
       case 'up':
         if(data.isSelected) {
-          $("#dpad-target").animate({ top: "-=180" }, 5000);  
+          $("#dpad-target").animate({ top: "-=2000" }, duration);  
         }
         else {
           $("#dpad-target").stop();
@@ -48,7 +53,7 @@ controller('PcDpadCtrl', function($scope, socket) {
         break;
       case 'down':
         if(data.isSelected) {
-          $("#dpad-target").animate({ top: "+=180" }, 5000);  
+          $("#dpad-target").animate({ top: "+=2000" }, duration);  
         }
         else {
           $("#dpad-target").stop();
@@ -56,7 +61,7 @@ controller('PcDpadCtrl', function($scope, socket) {
         break;
       case 'left':
         if(data.isSelected) {
-          $("#dpad-target").animate({ left: "-=180" }, 5000);  
+          $("#dpad-target").animate({ left: "-=2000" }, duration);  
         }
         else {
           $("#dpad-target").stop();
@@ -64,7 +69,7 @@ controller('PcDpadCtrl', function($scope, socket) {
         break;
       case 'right':
         if(data.isSelected) {
-          $("#dpad-target").animate({ left: "+=180" }, 5000);  
+          $("#dpad-target").animate({ left: "+=2000" }, duration);  
         }
         else {
           $("#dpad-target").stop();
