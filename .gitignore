@@ -1,4 +1,5 @@
 .vagrant/
+.bower-cache/
 .bower-registry/
 .bower-tmp/
 node_modules/
