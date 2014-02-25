@@ -1,6 +1,6 @@
 include navbar
 
-div.gestures-container(
+div.demo-container.gestures-container(
   ng-controller='MobileGesturesCtrl',
   hm-hold='detectGesture("Hold")',
   hm-tap='detectGesture("Tap")',
@@ -9,6 +9,13 @@ div.gestures-container(
   hm-dragdown='detectGesture("Drag down")',
   hm-dragleft='detectGesture("Drag left")',
   hm-dragright='detectGesture("Drag right")',
+  hm-swipeup='detectGesture("Swipe up")',
+  hm-swipedown='detectGesture("Swipe down")',
+  hm-swipeleft='detectGesture("Swipe left")',
+  hm-swiperight='detectGesture("Swipe right")',
   hm-options='{ tap_always: false }'
 )
   p Try me
+
+div.gestures-caption-container
+  p Supported gestures: hold, tap, double tap, drag, swipe

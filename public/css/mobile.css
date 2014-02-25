@@ -24,14 +24,17 @@ body {
   width: 120px;
 }
 
-.gestures-container {
+.demo-container {
   position: relative;
-  display: table;
   margin: 20px auto 0;
-  width: 300px;
-  height: 400px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.gestures-container {
+  display: table;
+  width: 90%;
+  height: 350px; 
 }
 
 .gestures-container p {
@@ -42,13 +45,14 @@ body {
   text-align: center;
 }
 
+.gestures-caption-container {
+  margin: 10px auto 0;
+  width: 90%;
+}
+
 .dpad-container {
-  position: relative;
-  margin: 20px auto 0;
   width: 200px;
   height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .btn-dpad {
