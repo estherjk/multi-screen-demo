@@ -1,5 +1,5 @@
-.vagrant
-.bower-registry
-.bower-tmp
+.vagrant/
+.bower-registry/
+.bower-tmp/
 node_modules/
 public/bower_components/
