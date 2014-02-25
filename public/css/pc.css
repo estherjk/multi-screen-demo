@@ -15,15 +15,15 @@ body {
 
 .demo-container {
   position: relative;
-  margin: 40px auto 0;
-  width: 90%;
+  margin-top: 40px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 #gestures-container {
   display: table;
-  height: 100px;
+  min-height: 100px;
 }
 
 #gestures-container p {

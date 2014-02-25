@@ -26,8 +26,10 @@ controller('PcMainCtrl', function($scope, $location, socket) {
 
 // controller for PC gestures demo
 controller('PcGesturesCtrl', function($scope, socket) {
+  $scope.gesture = 'Try something on your mobile...';
+
   socket.on('gestures:notify', function(data) {
-    $scope.gestureStr = data.gesture;
+    $scope.gesture = data.gesture;
   });
 }).
 
