@@ -8,11 +8,6 @@ body {
   font-weight: bold;
 }
 
-.span-success {
-  color: #5cb85c;
-  font-weight: bold;
-}
-
 .demo-container {
   position: relative;
   margin-top: 40px;
