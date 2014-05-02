@@ -4,7 +4,7 @@ multi-screen-demo is a [node.js](http://nodejs.org/) app that uses [socket.io](h
 
 ## Link
 
-You can check out the app in action [here](http://infinite-ridge-3285.herokuapp.com/).
+You can check out the app in action [here](http://multi-screen-demo.herokuapp.com/).
 
 ## Overview
 
